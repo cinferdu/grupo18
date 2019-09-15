@@ -100,6 +100,10 @@ public class Polinomio {
 	public double evaluarHorner(double x) {
 		double resultado = 0;
 
+		for (int i = 0; i < coeficientes.length; i++) {
+			resultado = resultado * x + coeficientes[i];
+		}
+		
 		return resultado;
 	}
 }
