@@ -8,7 +8,8 @@ public class Polinomio {
 		this.coeficientes = coeficientes;
 		this.grado = grado;
 	}
-
+	
+	//----------------------- 1 -----------------------
 	public double evaluarMSucesivas(double x) {
 		double resultado = 0;
 		double pow = 1;
@@ -22,7 +23,8 @@ public class Polinomio {
 		}
 		return resultado + this.coeficientes[this.grado];
 	}
-
+	
+	//----------------------- 2 -----------------------
 	public double evaluarRecursiva(double x) {
 		double resultado = 0;
 		for (int i = 0; i <= this.grado; i++)
@@ -36,31 +38,37 @@ public class Polinomio {
 		return x * this.pow(grado - 1, x);
 	}
 
-	
+	//----------------------- 3 -----------------------
 	public double evaluarRecursivaPar(double x) {
 		double resultado = 0;
 		
 		return resultado;
 	}
-
+	
+	//----------------------- 4 -----------------------
 	public double evaluarProgDinamica(double x) {
 		double resultado = 0;
 
 		return resultado;
 	}
-
+	
+	//----------------------- 5 -----------------------
 	public double evaluarMejorada(double x) {
 		double resultado = 0;
 
 		return resultado;
 	}
-
+	
+	
+	//----------------------- 6 -----------------------
 	public double evaluarPow(double x) {
 		double resultado = 0;
 
 		return resultado;
 	}
-
+	
+	
+	//----------------------- 7 -----------------------
 	public double evaluarHorner(double x) {
 		double resultado = 0;
 
