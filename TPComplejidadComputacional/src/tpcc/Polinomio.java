@@ -74,5 +74,5 @@ public class Polinomio {
 
 		return resultado;
 	}
-
+	//dfgdfgf
 }
