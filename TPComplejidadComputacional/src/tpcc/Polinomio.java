@@ -10,6 +10,9 @@ public class Polinomio {
 	}
 	
 	//----------------------- 1 -----------------------
+	
+	/*Escribir evaluarMSucesivas utilizando calculo de potencia por multiplicaciones sucesivas*/
+	
 	public double evaluarMSucesivas(double x) {
 		double resultado = 0;
 		double pow = 1;
@@ -25,6 +28,10 @@ public class Polinomio {
 	}
 	
 	//----------------------- 2 -----------------------
+	
+	/*Escribir evaluarRecursiva utilizando el siguiente calculo de potencia recursiva: 
+			a) Sin considerar si el exponente es par o impar: potencia(x,n)=x∗ potencia(x,n−1) */
+	
 	public double evaluarRecursiva(double x) {
 		double resultado = 0;
 		for (int i = 0; i <= this.grado; i++)
@@ -39,6 +46,12 @@ public class Polinomio {
 	}
 
 	//----------------------- 3 -----------------------
+	
+	/* Escribir evaluarRecursiva utilizando el siguiente calculo de potencia recursiva: 
+	  		b) Considerando si el exponente es par o impar: 
+					Si n es par: potencia(x,n)=potencia(x∗x,n/2) 
+					Si n es impar potencia(x,n)=x∗ potencia(x,n−1) */
+	
 	public double evaluarRecursivaPar(double x) {
 		double resultado = 0;
 		
@@ -46,6 +59,9 @@ public class Polinomio {
 	}
 	
 	//----------------------- 4 -----------------------
+	
+	/*Escribir evaluarProgDinamica, almacenando las potencias de X ya calculadas.*/
+	
 	public double evaluarProgDinamica(double x) {
 		double resultado = 0;
 
@@ -53,6 +69,10 @@ public class Polinomio {
 	}
 	
 	//----------------------- 5 -----------------------
+	
+	/*Escribir evaluarMejorada, con un algoritmo de igual complejidad computacional que el anterior, 
+      pero que ejecute en un tiempo menor.*/
+	
 	public double evaluarMejorada(double x) {
 		double resultado = 0;
 
@@ -61,6 +81,11 @@ public class Polinomio {
 	
 	
 	//----------------------- 6 -----------------------
+	
+	/*Escribir evaluarPow, valiéndose del método Math.pow(x,n) provisto por el lenguaje Java. 
+	  Se debe incluir dentro de alguno de los métodos anteriores donde se considere que es apropiado. 
+	  Investigue la CC de Math.pow. */
+	
 	public double evaluarPow(double x) {
 		double resultado = 0;
 
@@ -69,10 +94,12 @@ public class Polinomio {
 	
 	
 	//----------------------- 7 -----------------------
+	
+	/*Escribir evaluarHorner, aplicando el algoritmo de Horner de análisis numérico. (Investigar).*/
+	
 	public double evaluarHorner(double x) {
 		double resultado = 0;
 
 		return resultado;
 	}
-	//dfgdfgf
 }
