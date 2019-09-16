@@ -3,6 +3,7 @@ package tpcc;
 public class Polinomio {
 	private int grado;
 	private double[] coeficientes;
+	
 
 	public Polinomio(int grado, double[] coeficientes) {
 		this.coeficientes = coeficientes;
@@ -64,7 +65,18 @@ public class Polinomio {
 	
 	public double evaluarProgDinamica(double x) {
 		double resultado = 0;
+		double [] storage = new double[this.grado + 1];
 
+		storage[0] = 1;
+		
+		for (int i = 1; i <= this.grado ; i++) {
+			storage[i] = storage[i-1] * x;
+		}
+
+		for (int i = this.grado; i >= 0; i--) {
+			resultado += coeficientes[i]*storage[this.grado - i];
+		}
+		
 		return resultado;
 	}
 	
