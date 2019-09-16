@@ -34,8 +34,8 @@ public class Polinomio {
 
 	/*
 	 * Escribir evaluarRecursiva utilizando el siguiente calculo de potencia
-	 * recursiva: a) Sin considerar si el exponente es par o impar: potencia(x,n)=x∗
-	 * potencia(x,n−1)
+	 * recursiva: a) Sin considerar si el exponente es par o impar:
+	 * potencia(x,n)=x∗ potencia(x,n−1)
 	 */
 
 	public double evaluarRecursiva(double x) {
@@ -48,8 +48,6 @@ public class Polinomio {
 	private double pow(int grado, double x) {
 		if (grado == 0)
 			return 1;
-
-		/* SIN FINALIZAR */
 		return x * this.pow(grado - 1, x);
 	}
 
@@ -63,8 +61,13 @@ public class Polinomio {
 	 */
 
 	public double evaluarRecursivaPar(double x) {
-		/* SIN FINALIZAR */
 		double resultado = 0;
+
+		for (int i = 0; i <= this.grado; i++)
+			if ((this.grado - i) % 2 == 0)
+				resultado += this.pow((this.grado - i) / 2, x * x) * coeficientes[i];
+			else
+				resultado += this.pow(this.grado - i, x) * coeficientes[i];
 
 		return resultado;
 	}
@@ -86,7 +89,7 @@ public class Polinomio {
 		}
 
 		for (int i = this.grado; i >= 0; i--) {
-			resultado += coeficientes[i] * storage[this.grado - i];
+			resultado += coeficientes[this.grado - i] * storage[i];
 		}
 
 		return resultado;
@@ -100,9 +103,12 @@ public class Polinomio {
 	 */
 
 	public double evaluarMejorada(double x) {
-		/* SIN FINALIZAR */
 		double resultado = 0;
-
+		int pow = 1;
+		for (int i = 0; i <= this.grado; i++) {
+			resultado += pow * this.coeficientes[this.grado - i];
+			pow *= x;
+		}
 		return resultado;
 	}
 
@@ -115,9 +121,9 @@ public class Polinomio {
 	 */
 
 	public double evaluarPow(double x) {
-		/* SIN FINALIZAR */
 		double resultado = 0;
-
+		for (int i = coeficientes.length - 1; i >= 0; i--)
+			resultado += coeficientes[i] * Math.pow(x, 3 - i);
 		return resultado;
 	}
 
