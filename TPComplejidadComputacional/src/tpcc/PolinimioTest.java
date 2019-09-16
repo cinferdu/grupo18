@@ -23,6 +23,12 @@ class PolinimioTest {
 		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
 		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarRecursiva(2),0.00);
 	}
+	
+	@Test
+	void testRecursivoPar() {
+		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
+		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarRecursivaPar(2),0.00);
+	}
 
 	@Test
 	void evaluarProgDinamicaTest() {

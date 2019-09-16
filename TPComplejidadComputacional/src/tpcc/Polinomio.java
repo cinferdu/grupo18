@@ -48,8 +48,6 @@ public class Polinomio {
 	private double pow(int grado, double x) {
 		if (grado == 0)
 			return 1;
-
-		/* SIN FINALIZAR */
 		return x * this.pow(grado - 1, x);
 	}
 
@@ -63,8 +61,13 @@ public class Polinomio {
 	 */
 
 	public double evaluarRecursivaPar(double x) {
-		/* SIN FINALIZAR */
 		double resultado = 0;
+		
+		for (int i = 0; i <= this.grado; i++)
+			if((this.grado-i)%2 == 0)
+				resultado += this.pow((this.grado-i)/2, x*x) * coeficientes[i];
+			else
+				resultado += this.pow(this.grado - i, x) * coeficientes[i];
 
 		return resultado;
 	}
