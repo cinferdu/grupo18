@@ -37,6 +37,18 @@ class PolinimioTest {
 	}
 	
 	@Test
+	void evaluarMejoradaTest() {
+		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
+		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarMejorada(2),0.00);
+	}
+	
+	@Test
+	void evaluarPowTest() {
+		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
+		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarPow(2),0.00);
+	}
+	
+	@Test
 	void evaluarHornerTest() {
 		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
 		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarHorner(2),0.00);
