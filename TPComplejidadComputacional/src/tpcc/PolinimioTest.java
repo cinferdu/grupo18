@@ -21,4 +21,11 @@ class PolinimioTest {
 		Polinomio p1 = new Polinomio(3,coef);
 		Assert.assertEquals(64,p1.evaluarRecursiva(2),0.00);
 	}
+	
+	@Test
+	void testProgramacionDinamica() {
+		double[] coef = {5,4,3,2};
+		Polinomio p1 = new Polinomio(3,coef);
+		Assert.assertEquals(64,p1.evaluarProgDinamica(2),0.00);
+	}
 }

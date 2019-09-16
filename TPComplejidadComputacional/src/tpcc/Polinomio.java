@@ -42,6 +42,8 @@ public class Polinomio {
 	private double pow(int grado, double x) {
 		if (grado == 0)
 			return 1;
+		
+		/* SIN FINALIZAR */
 		return x * this.pow(grado - 1, x);
 	}
 
@@ -53,6 +55,7 @@ public class Polinomio {
 					Si n es impar potencia(x,n)=x∗ potencia(x,n−1) */
 	
 	public double evaluarRecursivaPar(double x) {
+		/* SIN FINALIZAR */
 		double resultado = 0;
 		
 		return resultado;
@@ -63,7 +66,10 @@ public class Polinomio {
 	/*Escribir evaluarProgDinamica, almacenando las potencias de X ya calculadas.*/
 	
 	public double evaluarProgDinamica(double x) {
+		/* SIN FINALIZAR */
 		double resultado = 0;
+		for(int i = coeficientes.length - 1; i >= 0; i--)
+			resultado += coeficientes[i] * Math.pow(x, 3-i);
 
 		return resultado;
 	}
@@ -74,6 +80,7 @@ public class Polinomio {
       pero que ejecute en un tiempo menor.*/
 	
 	public double evaluarMejorada(double x) {
+		/* SIN FINALIZAR */
 		double resultado = 0;
 
 		return resultado;
@@ -87,6 +94,7 @@ public class Polinomio {
 	  Investigue la CC de Math.pow. */
 	
 	public double evaluarPow(double x) {
+		/* SIN FINALIZAR */
 		double resultado = 0;
 
 		return resultado;
@@ -98,6 +106,7 @@ public class Polinomio {
 	/*Escribir evaluarHorner, aplicando el algoritmo de Horner de análisis numérico. (Investigar).*/
 	
 	public double evaluarHorner(double x) {
+		/* SIN FINALIZAR */
 		double resultado = 0;
 
 		return resultado;
