@@ -7,25 +7,32 @@ import org.junit.jupiter.api.Test;
 
 class PolinimioTest {
 
+	private final double[] POL_1_COEF = {5,4,3,2};
+	private final int POL_1_GRADO = 3;
+	private final double POL_1_RESULTADO = 64;
+
 	@Test
 	void testSucesivo() {
-		double[] coef = {5,4,3,2};
-		Polinomio p1 = new Polinomio(3,coef);
-		Assert.assertEquals(64,p1.evaluarMSucesivas(2),0.00);
+		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
+		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarMSucesivas(2),0.00);
 	}
-	
-	
+
+
 	@Test
 	void testRecursivo() {
-		double[] coef = {5,4,3,2};
-		Polinomio p1 = new Polinomio(3,coef);
-		Assert.assertEquals(64,p1.evaluarRecursiva(2),0.00);
+		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
+		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarRecursiva(2),0.00);
+	}
+
+	@Test
+	void evaluarProgDinamicaTest() {
+		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
+		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarProgDinamica(2),0.00);
 	}
 	
 	@Test
-	void testProgramacionDinamica() {
-		double[] coef = {5,4,3,2};
-		Polinomio p1 = new Polinomio(3,coef);
-		Assert.assertEquals(64,p1.evaluarProgDinamica(2),0.00);
+	void evaluarHornerTest() {
+		Polinomio p1 = new Polinomio(POL_1_GRADO,POL_1_COEF);
+		Assert.assertEquals(POL_1_RESULTADO,p1.evaluarHorner(2),0.00);
 	}
 }
