@@ -122,8 +122,8 @@ public class Polinomio {
 
 	public double evaluarPow(double x) {
 		double resultado = 0;
-		for (int i = coeficientes.length - 1; i >= 0; i--)
-			resultado += coeficientes[i] * Math.pow(x, 3 - i);
+		for (int i = 0; i <= this.grado ; i++)
+			resultado += Math.pow(x, 3 - i)*this.coeficientes[i];
 		return resultado;
 	}
 
