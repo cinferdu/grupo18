@@ -57,7 +57,7 @@ public class BinomioDeNewton {
 		return factorial;
 	}
 
-	private long factorialRecursivo (int n)
+	public long factorialRecursivo (int n)
 	{
 		if (n == 1)
 			return 1;
