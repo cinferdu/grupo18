@@ -5,44 +5,51 @@ public class BinomioDeNewton {
 	private double a, b;
 	private int n;
 	
-	public double CalcUltTermino ()
+	public BinomioDeNewton (double a, double b, int n)
+	{
+		this.a = a;
+		this.b = b;
+		this.n = n;
+	}
+	
+	public double calcUltTermino (double x)
 	{		
-		return Math.pow(this.a, this.n);
+		return Math.pow(this.a*x, this.n);
 	}
 	
-	public double[] ObtenerTerminosIterativo()
+	public double obtenerTerminosIterativo(double x)
 	{
 		double resultado = 0;
-		double[] terminos = new double[this.n + 1];
+				
+		for(int k=0; k <= this.n; k++)
+		{
+			long combinatoria = (factorialIterativo(this.n)/factorialIterativo(k));
+			resultado += combinatoria * Math.pow(this.a*x, k) * Math.pow(this.b, this.n-k);
+		
+		}
+		return resultado;
+		
+	}
+	
+	public double obtenerTerminosRecusivo(double x)
+	{
+		double resultado = 0;
 		
 		for(int k=0; k <= this.n; k++)
 		{
-			long combinatoria = (FactorialIterativo(this.n)/FactorialIterativo(k));
-			terminos [k] = combinatoria*Math.pow(this.a, k) * Math.pow(this.b, (this.n)-k);
+			long combinatoria = (factorialRecursivo(this.n)/factorialRecursivo(k));
+			resultado += combinatoria * Math.pow(this.a*x, k) * Math.pow(this.b, this.n-k);
 		
 		}
-		return terminos;
+		return resultado;
 		
 	}
 	
-	public double[] ObtenerTerminosRecusivo()
-	{
-		double resultado = 0;
-		double[] terminos = new double[this.n + 1];
-		
-		for(int k=0; k <= this.n; k++)
-		{
-			long combinatoria = (FactorialRecursivo(this.n)/FactorialRecursivo(k));
-			terminos [k] = combinatoria*Math.pow(this.a, k) * Math.pow(this.b, (this.n)-k);
-		
-		}
-		return terminos;
-		
-	}
-	
-	private long FactorialIterativo (int n)
+	private long factorialIterativo (int n)
 	{
 		long factorial = 1;
+		if (n <= 1)
+			return 1;
 		for (int i=1; i<=n ; i++)
 		{
 			factorial *= i;
@@ -50,10 +57,10 @@ public class BinomioDeNewton {
 		return factorial;
 	}
 
-	private long FactorialRecursivo (int n)
+	private long factorialRecursivo (int n)
 	{
 		if (n == 1)
 			return 1;
-		return n*FactorialRecursivo(n-1);
+		return n*factorialRecursivo(n-1);
 	}
 }
