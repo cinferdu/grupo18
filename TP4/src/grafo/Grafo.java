@@ -16,12 +16,8 @@ public class Grafo {
 		aristas.setValor(n1, n2,true);
 	}
 
-	@Override
-	public String toString() {
-		return "Grafo [distancias=" + aristas + "]";
-	}
 
-	public int getMaximaCantidadAristas() {
+	public int getMaxAristas() {
 		return aristas.getSize();
 	}
 
@@ -75,17 +71,34 @@ public class Grafo {
 		return gradoMax;
 	}
 
-	public void generarArchivoGrafo(String path) throws IOException {
-		FileWriter archivo = new FileWriter(path);
-		PrintWriter fichero = new PrintWriter(archivo);
-		int cantidadDeAristas = getCantidadDeAristas() ;
-		fichero.println(getCantidadDeNodos() + " " + cantidadDeAristas + " " + (double)cantidadDeAristas/getMaximaCantidadAristas() + " " + getGradoMax() + " " + getGradoMin());
-		for (int i = 0; i < getCantidadDeNodos(); i++)
-			for (int j = i; j < getCantidadDeNodos(); j++)
-				if (i != j && hayArista(i, j) == true)
-					fichero.println(i + " " + j);					
-		archivo.close();
+	public void generarArchivoGrafo(String path) {
+		PrintWriter fichero = null;
+		int cantidadDeAristas;
+		
+		try {
+			fichero = new PrintWriter(new FileWriter(path));
+			cantidadDeAristas = getCantidadDeAristas() ;
+			fichero.println(getCantidadDeNodos() + " " 
+							+ cantidadDeAristas + " " 
+							+ (double)cantidadDeAristas/getMaxAristas() 
+							+ " " + getGradoMax() + " " + getGradoMin());
+			
+			for (int origen = 0; origen < getCantidadDeNodos(); origen++)
+				for (int destino = origen; destino < getCantidadDeNodos(); destino++)
+					if (origen != destino && hayArista(origen, destino) == true)
+						fichero.println(origen + " " + destino);					
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(fichero != null)
+				fichero.close();
+		}
 	}
 
+	@Override
+	public String toString() {
+		return "Grafo [distancias=" + aristas + "]";
+	}
 	
 }

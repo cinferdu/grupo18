@@ -1,4 +1,4 @@
-package grafo.generadores;
+package grafo.generadores.regular;
 
 import grafo.Grafo;
 

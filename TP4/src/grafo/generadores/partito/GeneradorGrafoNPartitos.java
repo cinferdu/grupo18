@@ -1,4 +1,4 @@
-package grafo.generadores;
+package grafo.generadores.partito;
 
 import java.util.Random;
 

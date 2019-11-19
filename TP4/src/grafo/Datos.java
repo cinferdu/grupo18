@@ -4,15 +4,12 @@ public class Datos {
 	private int cantColores;
 	private int repeticion;
 	
-	public Datos(int c, int r)
-	{
-		this.cantColores=c;
-		this.repeticion=r;
+	public Datos(int cantColores, int repeticion) {
+		this.cantColores = cantColores;
+		this.repeticion = repeticion;
 	}
 	
-	public Datos()
-	{
-	}
+	public Datos() {}
 	
 	public int getCantColores() {
 		return cantColores;
